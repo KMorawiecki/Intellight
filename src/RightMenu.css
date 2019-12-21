@@ -1,0 +1,13 @@
+.logo-instance{
+    padding: 20px;
+    /*position: absolute;*/
+}
+
+.menu{
+    margin: 20px;
+    border: 15px solid green;
+    background-color: lightgrey;
+    border-radius: 25px;
+    width: 30%;
+    max-height: 380px;
+}
