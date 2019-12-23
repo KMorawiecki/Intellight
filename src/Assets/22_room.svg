@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="187.45561mm"
-   height="108.59325mm"
-   viewBox="0 0 187.45561 108.59325"
+   width="63.500191mm"
+   height="62.6534mm"
+   viewBox="0 0 63.500189 62.6534"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="22_room.svg">
+   sodipodi:docname="21_room.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="-170.65766"
-     inkscape:cy="46.614202"
+     inkscape:cx="-168.67864"
+     inkscape:cy="-61.210877"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -60,17 +60,18 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-13.589896,-77.397704)">
+     transform="translate(-74.48741,-94.808835)">
     <g
-       id="layer1-6-0"
+       id="layer1-6"
        inkscape:label="Layer 1"
-       transform="matrix(1.5284151,0,0,0.95156734,-27.385824,4.4334363)">
-      <path
-         style="fill:#b3b3b3;stroke:#000000;stroke-width:1.20265913;stroke-opacity:1"
-         d="M 240.72656,0.50976562 V 237.05078 H 0.4375 v 172.6875 h 333.41211 v -0.18945 H 707.72852 V 0.50976562 Z"
-         transform="matrix(0.1731096,0,0,0.27805004,26.837648,76.703446)"
-         id="rect4535-9"
-         inkscape:connector-curvature="0" />
+       transform="matrix(0.78292374,0,0,0.54960466,20.952932,52.646909)">
+      <rect
+         y="76.845116"
+         x="68.509567"
+         height="113.73336"
+         width="80.842628"
+         id="rect4535"
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.26385456;stroke-opacity:1" />
     </g>
     <g
        id="layer1-6-1"

@@ -2,23 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ea99014-2c5d-449e-8f77-47c007be342a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Assets/11_room.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/12_room.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/13_room.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/14_room.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/1full_floor.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/stroke.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FloorLogo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FloorLogo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MainImage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MainImage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RightMenu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RightMenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/21_room.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/21_room.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/22_room.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/22_room.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FloorLogo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/FloorLogo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainImage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainImage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainImage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,6 +102,9 @@
       <workItem from="1576530207661" duration="6981000" />
       <workItem from="1576758127204" duration="9417000" />
       <workItem from="1576857679576" duration="19936000" />
+      <workItem from="1576953214004" duration="2368000" />
+      <workItem from="1577029887018" duration="16696000" />
+      <workItem from="1577101452537" duration="5812000" />
     </task>
     <servers />
   </component>

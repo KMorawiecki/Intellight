@@ -1,4 +1,4 @@
-import React from 'react';
+import React,  { Component }  from 'react';
 import './App.css';
 import RightMenu from './RightMenu.js';
 import MainImage from "./MainImage.js";
@@ -16,7 +16,8 @@ class App extends React.Component {
 
     state = {
         currentRoom: "floor_room1",
-        currentFloor: "1",
+        currentFloor: 1,
+        sliderVal: 100
     };
 
     changeCurrentRoom(newRoom) {
@@ -29,19 +30,47 @@ class App extends React.Component {
         this.setState({
             currentFloor: newFloor
         });
+
     };
+
+    componentDidUpdate() {
+        this.mainImage.changeToCurrent()
+    }
+
+    // updateSlider(){
+    //     let image = document.getElementById(this.state.currentRoom);
+    //     let value = parseInt(image.style.opacity);
+    //
+    //     this.setState({
+    //         sliderVal : value
+    //     })
+    // }
 
     render() {
 
         document.body.style = 'background-color: #282c34;';
 
         const handleChange = (event, newValue) => {
-            var image = document.getElementById(this.state.currentRoom);
+            let image = document.getElementById(this.state.currentRoom);
 
-            var value = newValue/100;
-            image.style.opacity = value.toString();
+            image.style.filter = "brightness(" + newValue.toString() + "%)";
+
+            this.setState({
+                sliderVal : newValue
+            })
         };
 
+        const updateSlider = () => {
+            let image = document.getElementById(this.state.currentRoom);
+            let value = image.style.filter.match(/(\d+)/);
+            if(value == null)
+                value = [100];
+
+            this.setState({
+                sliderVal : value[0]
+            })
+
+        };
 
         return (
             <div className="App">
@@ -51,6 +80,7 @@ class App extends React.Component {
                     </Typography>
                     <Slider className="Slider"
                             id = "Slider"
+                            value={this.state.sliderVal}
                             step={10}
                             marks
                             min={10}
@@ -60,17 +90,22 @@ class App extends React.Component {
                             onChange = {handleChange}
                     />
                 </div>
-                <div>
+                <div className="FloorContainer">
                     <MainImage className="ActiveFloor"
-                               id = "ActiveFloor"
+                               id="ActiveFloor"
                                currentRoom={this.state.currentRoom}
-                               onChange={this.changeCurrentRoom}/>
+                               currentFloor={this.state.currentFloor}
+                               onChange={this.changeCurrentRoom}
+                               updateSlider={updateSlider}
+                               ref={MainImage => {
+                                   this.mainImage = MainImage;
+                               }}/>
                 </div>
-                <div>
+                <div className="RightMenuContainer">
                     <RightMenu className="RightMenu"
                                id = "RightMenu"
                                currentFloor={this.state.currentFloor}
-                               onChange={this.changeCurrentFloor}/>/>
+                               onChange={this.changeCurrentFloor}/>
                 </div>
             </div>
         );

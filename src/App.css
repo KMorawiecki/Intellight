@@ -15,13 +15,19 @@
   /*justify-self: center;*/
 }
 
-.RightMenu {
+.RightMenuContainer {
   grid-area: right;
 }
 
 .ActiveFloor {
-  grid-area: main;
-  justify-self: start;
+  /*grid-area: main;*/
+  /*justify-self: start;*/
+}
+
+.FloorContainer {
+    grid-area: main;
+    display: flex;
+    justify-self: start;
 }
 
 /*@media (prefers-reduced-motion: no-preference) {*/

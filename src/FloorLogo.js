@@ -19,7 +19,7 @@ class FloorLogo extends React.Component {
 
     changeSize(over) {
 
-        var image = document.getElementById("logo" + this.props.source.toString());
+        const image = document.getElementById("logo" + this.props.source.toString());
 
         switch(over){
             case 0:
