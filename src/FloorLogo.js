@@ -7,9 +7,7 @@ class FloorLogo extends React.Component {
         return (
             <img className = 'logo' id = {"logo" + this.props.source.toString()}
                  src={this.props.source} alt="floor_icon"
-                 onClick={() => this.changeActive()}
-                 onMouseOver={() => this.changeSize(0)}
-                 onMouseLeave={() => this.changeSize(1)}/>
+                 onClick={() => this.changeActive()}/>
         )
     }
 

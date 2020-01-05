@@ -1,114 +1,76 @@
 import React,  { Component }  from 'react';
-import './App.css';
-import RightMenu from './RightMenu.js';
-import MainImage from "./MainImage.js";
-import Typography from '@material-ui/core/Typography';
-import Slider from '@material-ui/core/Slider';
+import Loader from './Loader.js'
+import LoginScene from "./LoginScene";
+import WebSocket from "ws";
 
 class App extends React.Component {
-
-    constructor(props) {
+    constructor(props){
         super(props);
 
-        this.changeCurrentRoom = this.changeCurrentRoom.bind(this);
-        this.changeCurrentFloor = this.changeCurrentFloor.bind(this);
+        this.brightnessPlan = {};
+        this.fetchBrightnessPlan();
+        this.name = process.argv.slice(2)[0];
+        this.ws = new WebSocket("ws://localhost:8080");
     }
 
-    state = {
-        currentRoom: "floor_room1",
-        currentFloor: 1,
-        sliderVal: 100
-    };
 
-    changeCurrentRoom(newRoom) {
-        this.setState({
-            currentRoom: newRoom
-        });
-    };
-
-    changeCurrentFloor(newFloor) {
-        this.setState({
-            currentFloor: newFloor
-        });
-
-    };
-
-    componentDidUpdate() {
-        this.mainImage.changeToCurrent()
+    handleMessage(m){
+        if(m.type === "UPDATE"){
+            this.brightnessPlan = m.payload;
+        }
     }
 
-    // updateSlider(){
-    //     let image = document.getElementById(this.state.currentRoom);
-    //     let value = parseInt(image.style.opacity);
-    //
-    //     this.setState({
-    //         sliderVal : value
-    //     })
-    // }
+    fetchBrightnessPlan() {
+        const request = {
+            type: "GET",
+            token: "...."
+        }
+        // ws.send(JSON.stringify(request))
+    }
+
+    updateBrightness(newPlan){
+        const request = {
+            type: "UPDATE",
+            payload: newPlan
+        }
+        // ws.send(JSON.stringify(request))
+    }
+
+    enterGuest =() => {
+
+    };
+
+    sendRequest = (login, pass) => {
+        this.ws.send(
+            JSON.stringify({
+                type: "LOGIN",
+                user: login,
+                pass: pass
+            })
+        );
+        alert(this.state.login)
+    };
 
     render() {
 
-        document.body.style = 'background-color: #282c34;';
-
-        const handleChange = (event, newValue) => {
-            let image = document.getElementById(this.state.currentRoom);
-
-            image.style.filter = "brightness(" + newValue.toString() + "%)";
-
-            this.setState({
-                sliderVal : newValue
-            })
-        };
-
-        const updateSlider = () => {
-            let image = document.getElementById(this.state.currentRoom);
-            let value = image.style.filter.match(/(\d+)/);
-            if(value == null)
-                value = [100];
-
-            this.setState({
-                sliderVal : value[0]
-            })
-
-        };
-
         return (
-            <div className="App">
-                <div className="Light-slider">
-                    <Typography id="discrete-slider" gutterBottom>
-                        Light intensity
-                    </Typography>
-                    <Slider className="Slider"
-                            id = "Slider"
-                            value={this.state.sliderVal}
-                            step={10}
-                            marks
-                            min={10}
-                            max={100}
-                            defaultValue = {100}
-                            aria-labelledby="discrete-slider"
-                            onChange = {handleChange}
-                    />
-                </div>
-                <div className="FloorContainer">
-                    <MainImage className="ActiveFloor"
-                               id="ActiveFloor"
-                               currentRoom={this.state.currentRoom}
-                               currentFloor={this.state.currentFloor}
-                               onChange={this.changeCurrentRoom}
-                               updateSlider={updateSlider}
-                               ref={MainImage => {
-                                   this.mainImage = MainImage;
-                               }}/>
-                </div>
-                <div className="RightMenuContainer">
-                    <RightMenu className="RightMenu"
-                               id = "RightMenu"
-                               currentFloor={this.state.currentFloor}
-                               onChange={this.changeCurrentFloor}/>
-                </div>
-            </div>
-        );
+            //<Loader updateState={this.updateBrightness} brightnessPlan={this.brightnessPlan}/>
+            <LoginScene enterGuest = {this.enterGuest} sendRequest = {this.sendRequest}/>
+        )
+    }
+
+    componentDidMount() {
+        this.ws.onopen = function(){
+            alert("yo, polaczono")
+        };
+
+        this.ws.onclose = function() {
+            alert("yo, zamknieto")
+        };
+
+        this.ws.on("message", function incoming(data) {
+            alert(data);
+        });
     }
 }
 

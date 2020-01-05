@@ -56,7 +56,7 @@ class MainImage extends React.Component {
             let source = core_str_r.concat(floorNumber.toString().concat(i+1));
 
 
-            items.push(<img className={id}
+            items.push(<img className={`room ${id}`}
                             id={id}
                             src={eval("this.state." + source)}
                             alt="room_image"
@@ -102,6 +102,7 @@ class MainImage extends React.Component {
             });
         }
     }
+
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if(prevProps !== this.props && prevState !== this.state)

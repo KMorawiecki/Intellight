@@ -3,7 +3,7 @@
   grid-column-gap: 50px;
   grid-row-gap: 50px;
   grid-template-columns: 25% 50% 25%;
-  grid-template-rows: 30% 40% 30%;
+  grid-template-rows: 30% 100px auto;
   grid-template-areas:
           'leftup header rightup'
           'menu main right'
@@ -26,8 +26,12 @@
 
 .FloorContainer {
     grid-area: main;
-    display: flex;
     justify-self: start;
+    width: 100%;
+}
+
+.Background {
+    grid-area: main;
 }
 
 /*@media (prefers-reduced-motion: no-preference) {*/

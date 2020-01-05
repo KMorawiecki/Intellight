@@ -1,115 +1,128 @@
-/*.container1{*/
-/*    display: grid;*/
-/*    grid-column-gap: 50px;*/
-/*    grid-row-gap: 50px;*/
-/*    grid-template-columns: 25% 50% 25%;*/
-/*    grid-template-rows: 30% 40% 30%;*/
-/*    grid-template-areas:*/
-/*            'leftup header rightup'*/
-/*            'menu main  right'*/
-/*            'menu footer footer';*/
-/*}*/
+.container1{
+    position: relative;
+    width: 100%;
+}
+
+.container2{
+    position: relative;
+    width: 100%;
+}
+
+.container3{
+    position: relative;
+    width: 100%;
+}
 
 .floor_room11{
     position: absolute;
-    left: 600px;
-    top: 178px;
     max-width:100%;
     justify-self: start;
+    filter: brightness(100%);
 }
 
 .floor_room12{
     position: absolute;
-    left: 907px;
-    top: 178px;
+    left: 307px;
     max-width:100%;
     justify-self: start;
+    filter: brightness(100%);
 }
 
 .floor_room13{
     position: absolute;
-    left: 1077px;
-    top: 178px;
+    left: 477px;
     max-width:100%;
     justify-self: start;
+    filter: brightness(100%);
 }
 
 .floor_room14{
     position: absolute;
-    top: 609px;
-    left: 600px;
+    top: 431px;
     max-width:100%;
     justify-self: start;
+    filter: brightness(100%);
 }
 
 .floor_room21{
     position: absolute;
-    left: 600px;
-    top: 178px;
     max-width:100%;
     justify-self: start;
+    filter: brightness(100%);
 }
 
 .floor_room22{
     position: absolute;
-    left: 600px;
-    top: 178px;
     max-width:100%;
     justify-self: start;
+    filter: brightness(100%);
 }
 
 .floor_room23{
     position: absolute;
-    left: 600px;
-    top: 588px;
+    top: 410px;
     max-width:100%;
     justify-self: start;
+    filter: brightness(100%);
 }
 
 .floor_room24{
     position: absolute;
-    top: 588px;
-    left: 954px;
+    top: 410px;
+    left: 354px;
     max-width:100%;
     justify-self: start;
+    filter: brightness(100%);
 }
 
 .floor_room31{
     position: absolute;
-    left: 600px;
-    top: 178px;
     max-width:100%;
     justify-self: start;
+    filter: brightness(100%);
 }
 
 .floor_room32{
     position: absolute;
-    left: 845px;
-    top: 178px;
+    left: 245px;
     max-width:100%;
     justify-self: start;
+    filter: brightness(100%);
 }
 
 .floor_room33{
     position: absolute;
-    left: 1063px;
-    top: 178px;
+    left: 463px;
     max-width:100%;
     justify-self: start;
+    filter: brightness(100%);
 }
 
 .floor_room34{
     position: absolute;
-    left: 600px;
-    top: 463px;
+    top: 285px;
     max-width:100%;
     justify-self: start;
+    filter: brightness(100%);
 }
 
 .floor_room35{
     position: absolute;
-    left: 1063px;
-    top: 463px;
+    left: 463px;
+    top: 285px;
     max-width:100%;
     justify-self: start;
+    filter: brightness(100%);
+}
+
+.room {
+    opacity: 1;
+}
+
+.room:hover{
+    opacity: 0.8;
+}
+
+img {
+    cursor: pointer;
 }
