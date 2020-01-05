@@ -33,7 +33,6 @@ class MainImage extends React.Component {
             room_34 : room_34_source,
             room_35 : room_35_source,
             chosenFloor : 1,
-
         };
     }
 
