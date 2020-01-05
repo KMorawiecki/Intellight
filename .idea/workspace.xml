@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5ea99014-2c5d-449e-8f77-47c007be342a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Loader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Loader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Loader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginScene.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginScene.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginScene.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginScene.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainImage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,6 +110,7 @@
       <workItem from="1578128899170" duration="9065000" />
       <workItem from="1578152349157" duration="22649000" />
       <workItem from="1578185152487" duration="10052000" />
+      <workItem from="1578222137083" duration="6602000" />
     </task>
     <servers />
   </component>

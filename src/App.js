@@ -54,8 +54,8 @@ class App extends React.Component {
     render() {
 
         return (
-            //<Loader updateState={this.updateBrightness} brightnessPlan={this.brightnessPlan}/>
-            <LoginScene enterGuest = {this.enterGuest} sendRequest = {this.sendRequest}/>
+            <Loader updateState={this.updateBrightness} brightnessPlan={this.brightnessPlan}/>
+            //<LoginScene enterGuest = {this.enterGuest} sendRequest = {this.sendRequest}/>
         )
     }
 

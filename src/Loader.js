@@ -35,7 +35,7 @@ class Loader extends React.Component {
         floor_room34_bright : 100,
         floor_room35_bright : 100,
 
-        floor_room11check : true,
+        floor_room11_check : true,
         floor_room12_check : true,
         floor_room13_check : true,
         floor_room14_check : true,
@@ -48,11 +48,14 @@ class Loader extends React.Component {
         floor_room33_check : true,
         floor_room34_check : true,
         floor_room35_check : true,
+
+        switch_position :true
     };
 
     changeCurrentRoom(newRoom) {
         this.setState({
-            currentRoom: newRoom
+            currentRoom: newRoom,
+            switch_position: eval("this.state." + newRoom + "_check")
         });
     };
 
@@ -70,22 +73,23 @@ class Loader extends React.Component {
     handleChange = (event, newValue) => {
         let image = document.getElementById(this.state.currentRoom);
 
-        image.style.filter = "brightness(" + newValue.toString() + "%)";
+        if(eval("this.state." + this.state.currentRoom + "_check") === true)
+            image.style.filter = "brightness(" + newValue.toString() + "%)";
 
         this.setState({
             sliderVal : newValue,
-            [eval("this.state." + this.state.currentRoom + "_bright")] : newValue
+            [this.state.currentRoom + "_bright"] : newValue
         })
     };
 
     updateSlider = () => {
         let image = document.getElementById(this.state.currentRoom);
-        let value = image.style.filter.match(/(\d+)/);
+        let value = eval("this.state." + this.state.currentRoom + "_bright");//image.style.filter.match(/(\d+)/);
         if(value == null)
-            value = [100];
+            value = 100;
 
         this.setState({
-            sliderVal : value[0],
+            sliderVal : value,
         })
     };
 
@@ -96,7 +100,8 @@ class Loader extends React.Component {
         image.style.filter = "brightness(" + value + "%)";
 
         this.setState({
-            [eval("this.state." + this.state.currentRoom + "_check")] : newValue
+            [this.state.currentRoom + "_check"] : newValue,
+            switch_position : newValue
         })
     };
 
@@ -118,8 +123,9 @@ class Loader extends React.Component {
                     Light intensity
                 </Typography>
                 <Switch
-                    className={"Switch"}
-                    checked={this.state.floor_room11check}
+                    className="Switch"
+                    id="light_switch"
+                    checked={this.state.switch_position}
                     onChange={this.handleSwitch}
                     value="checkedB"
                     color="primary"
