@@ -18,6 +18,7 @@ class MainImage extends React.Component {
 
     constructor(props){
         super(props);
+
         this.state = {
             room_11 : room_11_source,
             room_12 : room_12_source,
@@ -43,6 +44,18 @@ class MainImage extends React.Component {
         this.props.onChange(newRoom);
     }
 
+    allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    drop(ev, id) {
+        ev.preventDefault();
+        const data = ev.dataTransfer.getData("text");
+        const newID = document.getElementById(data).parentElement.getAttribute('id');
+        const menu = document.getElementById(data).parentElement.parentElement;
+        menu.id = newID.toString()
+    }
+
     renderFloor(floorNumber) {
 
         let i;
@@ -59,7 +72,10 @@ class MainImage extends React.Component {
                             id={id}
                             src={eval("this.state." + source)}
                             alt="room_image"
-                            onClick={() => this.changeState(id)}/>)
+                            draggable={false}
+                            onClick={() => this.changeState(id)}
+                            onDrop={this.drop}
+                            onDragOver={this.allowDrop}/>)
         }
 
         return (
@@ -101,7 +117,6 @@ class MainImage extends React.Component {
             });
         }
     }
-
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if(prevProps !== this.props && prevState !== this.state)

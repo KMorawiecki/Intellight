@@ -3,32 +3,21 @@ import './FloorLogo.css'
 
 
 class FloorLogo extends React.Component {
+
+    drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
     render() {
         return (
-            <img className = 'logo' id = {"logo" + this.props.source.toString()}
-                 src={this.props.source} alt="floor_icon"
-                 onClick={() => this.changeActive()}/>
+            <img className = 'logo'
+                 id = {"http://localhost:3000" + this.props.source}
+                 src={this.props.source}
+                 alt="floor_icon"
+                 draggable={true}
+                 onDrag = {this.drag}
+            />
         )
-    }
-
-    changeActive() {
-        this.props.onChange(this.props.position);
-    }
-
-    changeSize(over) {
-
-        const image = document.getElementById("logo" + this.props.source.toString());
-
-        switch(over){
-            case 0:
-                image.style.width = '60%';
-                break;
-            case 1:
-                image.style.width = '50%';
-                break;
-            default:
-                break;
-        }
     }
 }
 

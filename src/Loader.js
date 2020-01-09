@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 import Stroke from './Assets/stroke.svg';
 import Switch from '@material-ui/core/Switch';
+import MutationObserver from 'react-mutation-observer';
 
 class Loader extends React.Component {
 
@@ -59,11 +60,18 @@ class Loader extends React.Component {
         });
     };
 
-    changeCurrentFloor(newFloor) {
-        this.setState({
-            currentFloor: newFloor
-        });
-
+    changeCurrentFloor = () => {
+        console.log('Change attribute triggered.')
+        try {
+            let menu = document.getElementsByClassName("menu")[0]
+            if (menu.id != this.state.currentFloor)
+                this.setState({
+                    currentFloor: parseInt(menu.id)
+                });
+        }
+        catch (TypeError) {
+            return
+        }
     };
 
     componentDidUpdate() {
@@ -144,7 +152,9 @@ class Loader extends React.Component {
                 />
                 <div className="Background">
                     <img src={Stroke}
-                         alt="stroke"/>
+                         alt="stroke"
+                         dropzone="move"
+                    />
                 </div>
                 <div className="FloorContainer">
                     <MainImage className="ActiveFloor"
@@ -154,17 +164,27 @@ class Loader extends React.Component {
                                onChange={this.changeCurrentRoom}
                                updateSlider={this.updateSlider}
                                ref={MainImage => {
-                                   this.mainImage = MainImage;
-                               }}
-                />
+                                   this.mainImage = MainImage;}}/>
                 </div>
                 <div className="RightMenuContainer">
-                    <RightMenu className="RightMenu"
-                               id = "RightMenu"
-                               currentFloor={this.state.currentFloor}
-                               onChange={this.changeCurrentFloor}/>
+                        <RightMenu className="RightMenu"
+                                   id = "RightMenu"
+                                   currentFloor={this.state.currentFloor}
+                                   onChange={this.changeCurrentFloor}
+                                   changeCurrentFloor={this.changeCurrentFloor}/>
                 </div>
-            </div>
+                {/*<MutationObserver*/}
+                {/*    onContentChange={console.log.bind(null, 'Change content triggered.')}*/}
+                {/*    onAttributeChange={console.log.bind(null, 'Change attribute triggered.')}*/}
+                {/*    onChildRemoval={console.log.bind(null, 'Child removal triggered.')}*/}
+                {/*    onChildAddition={console.log.bind(null, 'Child addition triggered.')}*/}
+                {/*>*/}
+                {/*    <div className="App-intro" id = "pyrpa" data-edit="EDIT ME">*/}
+                {/*        REMOVE ME*/}
+                {/*        <b>EDIT ME</b>*/}
+                {/*    </div>*/}
+                {/*</MutationObserver>*/}
+    </div>
         );
     }
 }
