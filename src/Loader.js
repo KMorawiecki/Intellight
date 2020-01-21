@@ -6,7 +6,6 @@ import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 import Stroke from './Assets/stroke.svg';
 import Switch from '@material-ui/core/Switch';
-import MutationObserver from 'react-mutation-observer';
 
 class Loader extends React.Component {
 
@@ -21,6 +20,7 @@ class Loader extends React.Component {
         currentRoom: "floor_room11",
         currentFloor: 1,
         sliderVal: 100,
+        sliderDis: true,
 
         floor_room11_bright : 100,
         floor_room12_bright : 100,
@@ -53,6 +53,59 @@ class Loader extends React.Component {
         switch_position :true
     };
 
+    parseState() {
+        const update = {};
+        let roomNum;
+        let floorNum;
+
+        for(floorNum = 1; floorNum < 4; floorNum++)
+            for(roomNum = 1; roomNum < 5 + Math.max(0, floorNum - 2); roomNum++)
+            {
+                let member = "item" + (4*(floorNum - 1) + roomNum - 1)
+                let pow = eval("this.state.floor_room" + floorNum.toString() + roomNum.toString() + "_check")
+                let bright = eval("this.state.floor_room" + floorNum.toString() + roomNum.toString() + "_bright")
+
+                update[member] = {
+                    floor: floorNum.toString(),
+                    room: roomNum.toString(),
+                    settings: {
+                        power: pow,
+                        brightness: bright
+                    }}
+            }
+
+        return update
+    }
+
+    updateParameters(newPlan) {
+        let roomNum;
+        let floorNum;
+        alert("yooooo")
+
+        for(floorNum = 1; floorNum < 4; floorNum++)
+            for(roomNum = 1; roomNum < 5 + Math.max(0, floorNum - 2); roomNum++)
+            {
+                const item = "item" + ((floorNum - 1)*4 + (roomNum - 1));
+                let image = document.getElementById("floor_room" + floorNum + roomNum);
+
+
+                if(eval("this.state.floor_room" + floorNum + roomNum + "_check") === true)
+                    image.style.filter = "brightness(" + newPlan[item]["settings"]["brightness"].toString() + "%)";
+                else
+                    image.style.filter = "brightness(0%)";
+
+                this.setState({
+                    ["floor_room" + floorNum + roomNum + "_bright"] : newPlan[item]["settings"]["brightness"],
+                    ["floor_room" + floorNum + roomNum + "_check"] : newPlan[item]["settings"]["power"]
+                });
+            }
+
+        this.setState({
+            switch_position: eval("this.state." + this.state.currentRoom + "_check")
+        });
+        console.log(this.state.floor_room11_check)
+    }
+
     changeCurrentRoom(newRoom) {
         this.setState({
             currentRoom: newRoom,
@@ -61,7 +114,7 @@ class Loader extends React.Component {
     };
 
     changeCurrentFloor = () => {
-        console.log('Change attribute triggered.')
+
         try {
             let menu = document.getElementsByClassName("menu")[0]
             if (menu.id != this.state.currentFloor)
@@ -76,6 +129,7 @@ class Loader extends React.Component {
 
     componentDidUpdate() {
         this.mainImage.changeToCurrent()
+
     }
 
     handleChange = (event, newValue) => {
@@ -87,7 +141,9 @@ class Loader extends React.Component {
         this.setState({
             sliderVal : newValue,
             [this.state.currentRoom + "_bright"] : newValue
-        })
+        },  () => {
+            this.props.updateState(this.parseState());
+        });
     };
 
     updateSlider = () => {
@@ -109,17 +165,17 @@ class Loader extends React.Component {
 
         this.setState({
             [this.state.currentRoom + "_check"] : newValue,
-            switch_position : newValue
-        })
+            switch_position : newValue,
+        },  () => {
+            this.props.updateState(this.parseState());
+        });
     };
 
     render() {
 
-        document.body.style = 'background-color: #282c34;';
-
+        //document.body.style = 'background-color: #282c34;';
 
         const currentBrightnessPlan = this.props.brightnessPlan;
-
 
         return (
             <div className="App">
@@ -139,14 +195,14 @@ class Loader extends React.Component {
                     color="primary"
                     inputProps={{ 'aria-label': 'primary checkbox' }}
                 />
-                <Slider className="Slider"
+                <Slider disabled={this.state.sliderDis}
+                        className="Slider"
                         id = "Slider"
                         value={this.state.sliderVal}
                         step={10}
                         marks
                         min={10}
                         max={100}
-                        defaultValue = {100}
                         aria-labelledby="discrete-slider"
                         onChange = {this.handleChange}
                 />
@@ -173,19 +229,28 @@ class Loader extends React.Component {
                                    onChange={this.changeCurrentFloor}
                                    changeCurrentFloor={this.changeCurrentFloor}/>
                 </div>
-                {/*<MutationObserver*/}
-                {/*    onContentChange={console.log.bind(null, 'Change content triggered.')}*/}
-                {/*    onAttributeChange={console.log.bind(null, 'Change attribute triggered.')}*/}
-                {/*    onChildRemoval={console.log.bind(null, 'Child removal triggered.')}*/}
-                {/*    onChildAddition={console.log.bind(null, 'Child addition triggered.')}*/}
-                {/*>*/}
-                {/*    <div className="App-intro" id = "pyrpa" data-edit="EDIT ME">*/}
-                {/*        REMOVE ME*/}
-                {/*        <b>EDIT ME</b>*/}
-                {/*    </div>*/}
-                {/*</MutationObserver>*/}
-    </div>
+            </div>
         );
+    }
+
+    componentDidMount() {
+
+        switch(this.props.perm)
+        {
+            case "admin":
+                this.setState({
+                    sliderDis: false
+                });
+                break;
+            case "guest":
+                this.setState({
+                    sliderDis: true
+                });
+                break;
+            default:
+                alert("Unexpected permission level");
+                break;
+        }
     }
 }
 

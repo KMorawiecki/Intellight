@@ -32,13 +32,13 @@ class LoginScene extends React.Component{
         document.body.style = 'background-color: #282c34;';
 
         return (
-            <div className="loginContainer">
+            <div className="loginContainer" id ="loginContainer">
                 <text className="loginText">Login: </text>
                 <input type="text" className="loginInput" value={this.state.login} onChange={this.loginUpdate} />
                 <text className="passText">Password: </text>
                 <input type="text" className="passInput" value={this.state.pass} onChange={this.passUpdate} />
-                <Button variant="outline-dark" className ="loginButton" onClick={() => this.props.sendRequest(this.state.login)}>Login</Button>
-                <Button variant="outline-dark" className ="guestButton" onClick={() => this.props.enterGuest(this.state.pass)}>Guest</Button>
+                <Button variant="outline-dark" className ="loginButton" onClick={() => this.props.sendRequest(this.state.login, this.state.pass)}>Login</Button>
+                <Button variant="outline-dark" className ="guestButton" onClick={() => this.props.enterGuest()}>Guest</Button>
             </div>
         )
     }

@@ -1,16 +1,22 @@
 import React,  { Component }  from 'react';
+import ReactDOM from 'react-dom';
 import Loader from './Loader.js'
 import LoginScene from "./LoginScene";
-import WebSocket from "ws";
 
 class App extends React.Component {
     constructor(props){
         super(props);
 
         this.brightnessPlan = {};
-        this.fetchBrightnessPlan();
-        this.name = process.argv.slice(2)[0];
-        this.ws = new WebSocket("ws://localhost:8080");
+        //this.fetchBrightnessPlan();
+        this.ws = new WebSocket('ws://localhost:8080/ws', 'websocket')
+    }
+
+    state = {
+        login: 0,
+        pass: 0,
+        perm: null,
+        token: null
     }
 
 
@@ -25,52 +31,82 @@ class App extends React.Component {
             type: "GET",
             token: "...."
         }
-        // ws.send(JSON.stringify(request))
+        this.ws.send(JSON.stringify(request))
     }
 
-    updateBrightness(newPlan){
+    updateBrightness = newPlan =>{
+        const user = this.state.login;
+        const token = this.state.token;
+        const update = newPlan;
+
         const request = {
             type: "UPDATE",
-            payload: newPlan
+            user,
+            token,
+            update
         }
-        // ws.send(JSON.stringify(request))
+        this.ws.send(JSON.stringify(request))
     }
 
     enterGuest =() => {
-
+        this.loginRequest("guest", "234")
     };
 
-    sendRequest = (login, pass) => {
+    loginRequest = (user, pass) => {
         this.ws.send(
             JSON.stringify({
                 type: "LOGIN",
-                user: login,
-                pass: pass
+                user,
+                pass
             })
         );
-        alert(this.state.login)
+
+        this.setState({
+            login: user,
+            pass: pass})
     };
 
-    render() {
+    renderLoader = () => {
+        ReactDOM.render(<Loader updateState={this.updateBrightness}
+                                brightnessPlan={this.fetchBrightnessPlan}
+                                perm = {this.state.perm}
+                                ref={Loader => {this.Loader = Loader;}}/>, document.getElementById('root'))
+    };
 
+
+    render() {
         return (
-            <Loader updateState={this.updateBrightness} brightnessPlan={this.brightnessPlan}/>
-            //<LoginScene enterGuest = {this.enterGuest} sendRequest = {this.sendRequest}/>
+            <LoginScene id = "login"
+                        enterGuest = {this.enterGuest}
+                        sendRequest = {this.loginRequest}
+                        websocket = {this.ws}/>
         )
     }
 
     componentDidMount() {
-        this.ws.onopen = function(){
-            alert("yo, polaczono")
-        };
 
-        this.ws.onclose = function() {
+        this.ws.onclose = () => {
             alert("yo, zamknieto")
         };
 
-        this.ws.on("message", function incoming(data) {
-            alert(data);
-        });
+        this.ws.onmessage = (event) =>{
+            const decoded = JSON.parse(event.data);
+
+            if (decoded.type === "LOGIN") {
+                this.setState({
+                    perm: decoded.permission,
+                    token: decoded.token
+                })
+
+                if (decoded.permission !== null)
+                    this.renderLoader()
+            }
+            else if(decoded.type === "NOTIFY")
+            {
+                alert("le notification")
+                this.Loader.updateParameters(decoded.brightnessPlan)
+            }
+        };
     }
 }
 
