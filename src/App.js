@@ -103,7 +103,6 @@ class App extends React.Component {
             }
             else if(decoded.type === "NOTIFY")
             {
-                alert("le notification")
                 this.Loader.updateParameters(decoded.brightnessPlan)
             }
         };

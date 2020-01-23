@@ -80,7 +80,6 @@ class Loader extends React.Component {
     updateParameters(newPlan) {
         let roomNum;
         let floorNum;
-        alert("yooooo")
 
         for(floorNum = 1; floorNum < 4; floorNum++)
             for(roomNum = 1; roomNum < 5 + Math.max(0, floorNum - 2); roomNum++)
@@ -88,8 +87,7 @@ class Loader extends React.Component {
                 const item = "item" + ((floorNum - 1)*4 + (roomNum - 1));
                 let image = document.getElementById("floor_room" + floorNum + roomNum);
 
-
-                if(eval("this.state.floor_room" + floorNum + roomNum + "_check") === true)
+                if(newPlan[item]["settings"]["power"] === true)
                     image.style.filter = "brightness(" + newPlan[item]["settings"]["brightness"].toString() + "%)";
                 else
                     image.style.filter = "brightness(0%)";
@@ -103,7 +101,6 @@ class Loader extends React.Component {
         this.setState({
             switch_position: eval("this.state." + this.state.currentRoom + "_check")
         });
-        console.log(this.state.floor_room11_check)
     }
 
     changeCurrentRoom(newRoom) {
