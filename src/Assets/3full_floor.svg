@@ -26,20 +26,20 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="397.57979"
+     inkscape:cx="44.026402"
      inkscape:cy="513.99837"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer1-7-7"
      showgrid="false"
      inkscape:snap-bbox="true"
      inkscape:snap-bbox-edge-midpoints="true"
      inkscape:bbox-paths="true"
      inkscape:bbox-nodes="true"
-     inkscape:window-width="958"
-     inkscape:window-height="1008"
-     inkscape:window-x="-7"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
@@ -52,7 +52,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -76,7 +76,7 @@
          height="113.73336"
          width="80.842628"
          id="rect4535"
-         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.26385456;stroke-opacity:1" />
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:1.50126922;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
     <g
        id="layer1-7-8"
@@ -88,7 +88,7 @@
          height="113.73336"
          width="80.842628"
          id="rect4535-8"
-         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.26385456;stroke-opacity:1" />
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:1.50126922;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
     <g
        id="layer1-7-7"
@@ -100,7 +100,7 @@
          height="113.73334"
          width="80.857704"
          id="rect4535-5"
-         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.26387912;stroke-opacity:1" />
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:1.24005315;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
     </g>
     <g
        id="layer1-7-9"
@@ -112,7 +112,7 @@
          height="113.73336"
          width="80.842628"
          id="rect4535-50"
-         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.26385456;stroke-opacity:1" />
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:1.57704079;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
     <g
        id="layer1-7-9-6"
@@ -124,7 +124,7 @@
          height="144.40233"
          width="80.810402"
          id="rect4535-50-8"
-         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.29724953;stroke-opacity:1" />
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:1.09732854;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
   </g>
 </svg>

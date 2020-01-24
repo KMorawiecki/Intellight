@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="full_floor.svg">
+   sodipodi:docname="1full_floor.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="897.11413"
+     inkscape:cx="216.32359"
      inkscape:cy="276.07851"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -52,7 +52,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -67,28 +67,28 @@
        id="rect3713"
        inkscape:connector-curvature="0" />
     <rect
-       style="fill:#b3b3b3;stroke:#000000;stroke-width:0.26385456;stroke-opacity:1"
+       style="fill:#b3b3b3;stroke:#000000;stroke-width:0.964;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect4535"
        width="80.842628"
        height="113.73336"
        x="14.52112"
        y="49.583622" />
     <rect
-       style="fill:#b3b3b3;stroke:#000000;stroke-width:0.26458332;stroke-opacity:1"
+       style="fill:#b3b3b3;stroke:#000000;stroke-width:0.965;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect4537"
        width="133.57431"
        height="56.909039"
        x="14.521484"
        y="163.58119" />
     <rect
-       style="fill:#b3b3b3;stroke:#000000;stroke-width:0.26458332;stroke-opacity:1"
+       style="fill:#b3b3b3;stroke:#000000;stroke-width:0.965;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect4539"
        width="61.074497"
        height="59.561848"
        x="140.60715"
        y="49.583984" />
     <path
-       style="fill:#b3b3b3;stroke:#000000;stroke-width:1.00438452;stroke-opacity:1"
+       style="fill:#b3b3b3;stroke:#000000;stroke-width:3.65102367;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
        d="m 361.43164,187.40625 v 429.85156 h 134.40625 v 0.54688 h 63.89453 v 215.54492 h 202.5293 V 617.80469 h 0.29687 V 413.51953 H 530.42578 V 187.40625 Z"
        id="rect4545"
        transform="scale(0.26458333)"

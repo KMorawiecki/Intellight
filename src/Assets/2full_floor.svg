@@ -26,10 +26,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="58.464232"
+     inkscape:cx="-191.53577"
      inkscape:cy="177.50514"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer1-6-0"
      showgrid="false"
      inkscape:snap-bbox="true"
      inkscape:snap-bbox-edge-midpoints="true"
@@ -52,7 +52,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -69,14 +69,15 @@
     <g
        id="layer1-6"
        inkscape:label="Layer 1"
-       transform="matrix(0.78292374,0,0,0.54960466,-39.145285,7.2897665)">
+       transform="matrix(0.78292374,0,0,0.54960466,-39.145285,7.2897665)"
+       style="stroke-width:0.30489132;stroke-miterlimit:4;stroke-dasharray:none">
       <rect
          y="76.845116"
          x="68.509567"
          height="113.73336"
          width="80.842628"
          id="rect4535"
-         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.26385456;stroke-opacity:1" />
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:1.52445662;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
     <g
        id="layer1-6-5"
@@ -88,26 +89,27 @@
          height="113.73336"
          width="80.842628"
          id="rect4535-0"
-         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.26385456;stroke-opacity:1" />
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:1.26781583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
     <g
        id="layer1-6-5-5"
        inkscape:label="Layer 1"
-       transform="matrix(1.1556014,0,0,0.54928033,29.090011,115.80921)">
+       transform="matrix(1.1556014,0,0,0.54928033,29.090011,115.80921)"
+       style="stroke-width:0.12551595;stroke-miterlimit:4;stroke-dasharray:none">
       <rect
          y="76.845116"
          x="68.509567"
          height="113.73336"
          width="80.842628"
          id="rect4535-0-9"
-         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.26385456;stroke-opacity:1" />
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:1.25515962;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
     <g
        id="layer1-6-0"
        inkscape:label="Layer 1"
        transform="matrix(1.5284151,0,0,0.95156734,-26.629875,-23.536802)">
       <path
-         style="fill:#b3b3b3;stroke:#000000;stroke-width:1.20265913;stroke-opacity:1"
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:3.84755908;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
          d="M 240.72656,0.50976562 V 237.05078 H 0.4375 v 172.6875 h 333.41211 v -0.18945 H 707.72852 V 0.50976562 Z"
          transform="matrix(0.1731096,0,0,0.27805004,26.837648,76.703446)"
          id="rect4535-9"
