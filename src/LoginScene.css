@@ -10,13 +10,15 @@
             'nope1 login inputlogin inputlogin blank'
             'nope2 pass inputpass inputpass blank1'
             'nope3 login_but nope4 guest_but blank2';
-    grid-template-columns: 10% 30% 20% auto 10%;
+    grid-template-columns: 5% 30% 20% auto 10%;
     grid-template-rows: 10% 20% 20% auto 10%;
     grid-gap: 10px;
     margin: 20px;
     border: 5px solid black;
     background-color: grey;
     border-radius: 25px;
+    min-height: 180px;
+    min-width: 400px;
 }
 
 .loginText{
@@ -34,13 +36,13 @@
 .loginInput{
     grid-area: inputlogin;
     align-self: center;
-    height: 50%;
+    /*height: 50%;*/
 }
 
 .passInput{
     grid-area: inputpass;
     align-self: center;
-    height: 50%;
+    /*height: 50%;*/
 }
 
 .loginButton{

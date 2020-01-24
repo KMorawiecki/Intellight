@@ -15,7 +15,7 @@
 
 .floor_room11{
     position: absolute;
-    max-width:100%;
+    /*max-width:100%;*/
     justify-self: start;
     filter: brightness(100%);
 }
@@ -23,7 +23,7 @@
 .floor_room12{
     position: absolute;
     left: 307px;
-    max-width:100%;
+    /*max-width:100%;*/
     justify-self: start;
     filter: brightness(100%);
 }
@@ -31,7 +31,7 @@
 .floor_room13{
     position: absolute;
     left: 477px;
-    max-width:100%;
+    /*max-width:100%;*/
     justify-self: start;
     filter: brightness(100%);
 }
@@ -39,14 +39,14 @@
 .floor_room14{
     position: absolute;
     top: 431px;
-    max-width:100%;
+    /*max-width:100%;*/
     justify-self: start;
     filter: brightness(100%);
 }
 
 .floor_room21{
     position: absolute;
-    max-width:100%;
+    min-width:100%;
     justify-self: start;
     filter: brightness(100%);
 }
@@ -61,7 +61,7 @@
 .floor_room23{
     position: absolute;
     top: 410px;
-    max-width:100%;
+    min-width:50%;
     justify-self: start;
     filter: brightness(100%);
 }
@@ -70,7 +70,7 @@
     position: absolute;
     top: 410px;
     left: 354px;
-    max-width:100%;
+    min-width:50%;
     justify-self: start;
     filter: brightness(100%);
 }
@@ -101,7 +101,7 @@
 .floor_room34{
     position: absolute;
     top: 285px;
-    max-width:100%;
+    min-width:65.5%;
     justify-self: start;
     filter: brightness(100%);
 }
@@ -117,6 +117,7 @@
 
 .room {
     opacity: 1;
+    zoom: 0.7;
 }
 
 .room:hover{

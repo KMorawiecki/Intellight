@@ -1,9 +1,14 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url("./Assets/Lobster_1.3.otf");
+}
+
 .App {
   display: grid;
   grid-column-gap: 50px;
-  grid-row-gap: 50px;
+  grid-row-gap: 30px;
   grid-template-columns: 15% 22% 22% auto;
-  grid-template-rows: 5% 5% auto 10%;
+  grid-template-rows: 10% 5% auto 10%;
   grid-template-areas:
           'leftup header-caption header-switch rightup'
           'leftup header-slider header-slider rightup'
@@ -15,7 +20,6 @@
 
 .Slider{
   grid-area: header-slider;
-  /*justify-self: center;*/
 }
 
 .Switch{
@@ -25,22 +29,41 @@
 
 .Caption{
   grid-area: header-caption;
+  justify-self: center;
 }
 
 .RightMenuContainer {
   grid-area: right;
   justify-self: center;
+    width: 50%;
 }
 
 .FloorContainer {
     grid-area: main;
-    justify-self: start;
-    width: 100%;
+    justify-self: center;
+    width: 50%;
 }
 
 .Background {
     grid-area: main;
+    width: 50%;
+    justify-self: center;
 }
+
+.Stroke {
+    zoom: 0.7;
+}
+
+@media (max-width:1000px){
+    .FloorContainer {
+        justify-self: start;
+    }
+
+    .Background {
+        justify-self: start;
+    }
+}
+
 
 /*@media (prefers-reduced-motion: no-preference) {*/
 /*  .App-logo {*/

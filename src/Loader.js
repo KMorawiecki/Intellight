@@ -6,6 +6,10 @@ import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 import Stroke from './Assets/stroke.svg';
 import Switch from '@material-ui/core/Switch';
+import back1 from './Assets/1back.jpg'
+import back2 from './Assets/2back.jpg'
+import back3 from './Assets/3back.jpg'
+import cool_font from './Assets/Lobster_1.3.otf'
 
 class Loader extends React.Component {
 
@@ -205,6 +209,7 @@ class Loader extends React.Component {
                 />
                 <div className="Background">
                     <img src={Stroke}
+                         className = "Stroke"
                          alt="stroke"
                          dropzone="move"
                     />
