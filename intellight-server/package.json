@@ -1,0 +1,21 @@
+{
+  "name": "intellight-server",
+  "version": "1.0.0",
+  "description": "Extremely sophisticated brightness control system",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "awesome",
+    "IOT",
+    "light"
+  ],
+  "author": "Krzysztof Morawiecki",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "uuid": "^3.3.3",
+    "ws": "^7.2.1"
+  }, "proxy": "http://localhost:8080"
+}
