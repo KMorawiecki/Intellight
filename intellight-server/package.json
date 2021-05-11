@@ -14,7 +14,7 @@
   "author": "Krzysztof Morawiecki",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "uuid": "^3.3.3",
     "ws": "^7.2.1"
   }, "proxy": "http://localhost:8080"
